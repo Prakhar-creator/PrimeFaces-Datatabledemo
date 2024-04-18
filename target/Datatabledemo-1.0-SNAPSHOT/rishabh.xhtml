@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+<head>
+    <title>Car List</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+</head>
+<body>
+    <h:form id="form">
+        <p:dataTable var="car" value="#{carBean.list}">
+            <f:facet name="header">
+                <center>
+                    <h1>Car List</h1>
+                </center>
+            </f:facet>
+            <p:column headerText="Model">
+                <h:outputText value="#{car.model}" />
+            </p:column>
+            <p:column headerText="Name">
+                <h:outputText value="#{car.name}" />
+            </p:column>
+        </p:dataTable>
+    </h:form>
+</body>
+</html>

@@ -1,0 +1,10 @@
+com\datatabledemo\resources\JakartaEE8Resource.class
+com\datademo\bean\Car.class
+com\datademo\bean\UserService.class
+com\datademo\bean\CarBean.class
+com\datademo\bean\ChartViewBarBean.class
+com\datademo\bean\User.class
+com\datademo\bean\ContextBean.class
+com\datademo\bean\ChartViewPieBean.class
+com\datademo\bean\UsersBean.class
+com\datatabledemo\conf\JakartaRestConfiguration.class
