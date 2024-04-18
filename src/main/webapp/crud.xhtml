@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>User Management</title>
+        <h:outputStylesheet library="primefaces" name="themes/cupertino/theme.css" />
+        <h:outputScript library="primefaces" name="jquery/jquery.js" />
+        <h:outputScript library="primefaces" name="primefaces.js" />
+    </h:head>
+     
+    <h:body>
+        <h:form id="userForm">
+            <!-- Add User Section -->
+            <h3>Add User</h3>
+            <p:panelGrid columns="2">
+                <p:outputLabel for="firstName" value="First Name:" />
+                <p:inputText id="firstName" value="#{usersBean.newUser.firstName}" required="true" />
+
+                <p:outputLabel for="lastName" value="Last Name:" />
+                <p:inputText id="lastName" value="#{usersBean.newUser.lastName}" required="true" />
+
+                <p:outputLabel for="age" value="Age:" />
+                <p:inputText id="age" value="#{usersBean.newUser.age}" required="true" />
+
+                <p:outputLabel for="gender" value="Gender:" />
+                <p:selectOneMenu id="gender" value="#{usersBean.newUser.gender}" required="true">
+                    <f:selectItem itemLabel="Select Gender" itemValue="" />
+                    <f:selectItem itemLabel="Male" itemValue="M" />
+                    <f:selectItem itemLabel="Female" itemValue="F" />
+                </p:selectOneMenu>
+
+                <p:outputLabel for="emailID" value="Email ID:" />
+                <p:inputText id="emailID" value="#{usersBean.newUser.emailID}" required="true" />
+
+                <p:outputLabel for="password" value="Password:" />
+                <p:inputText id="password" value="#{usersBean.newUser.password}" required="true" />
+
+                <p:outputLabel for="mobileNumber" value="Mobile Number:" />
+                <p:inputText id="mobileNumber" value="#{usersBean.newUser.mobilenumber}" required="true" />
+
+                <p:commandButton value="Add User" action="#{usersBean.addUser}" update="userForm:usersTable" />
+            </p:panelGrid>
+
+            <!-- Display Users Section -->
+            <h3>User List</h3>
+            <p:dataTable id="usersTable" var="user" value="#{usersBean.list}" stripedRows="true" size="large" widgetVar="usersTable">
+                <p:column headerText="First Name" filterBy="#{user.firstName}" filterMatchMode="contains">
+                    <h:outputText value="#{user.firstName}" />
+                </p:column>
+                <p:column headerText="Last Name"  filterBy="#{user.lastName}" filterMatchMode="contains">
+                    <h:outputText value="#{user.lastName}" />
+                </p:column>
+                <p:column headerText="Age" filterBy="#{user.age}" filterMatchMode="contains">
+                    <h:outputText value="#{user.age}" />
+                </p:column>
+                <p:column headerText="Gender" filterBy="#{user.gender}" filterMatchMode="contains">
+                    <h:outputText value="#{user.gender}" />
+                </p:column>
+                <p:column headerText="Email ID" filterBy="#{user.emailID}" filterMatchMode="contains">
+                    <h:outputText value="#{user.emailID}" />
+                </p:column>
+                <p:column headerText="Password" filterBy="#{user.password}" filterMatchMode="contains">
+                    <h:outputText value="#{user.password}" />
+                </p:column>
+                <p:column headerText="Mobile Number" filterBy="#{user.mobilenumber}" filterMatchMode="contains">
+                    <h:outputText value="#{user.mobilenumber}" />
+                </p:column>
+                <p:column>
+                    <p:commandButton value="Edit" action="#{usersBean.editUser(user)}" update="userForm:usersTable" />
+                </p:column>
+                <p:column>
+                    <p:commandButton value="Delete" action="#{usersBean.deleteUser(user)}" update="userForm:usersTable" />
+                </p:column>
+            </p:dataTable>
+        </h:form>
+    </h:body>
+</html>
+

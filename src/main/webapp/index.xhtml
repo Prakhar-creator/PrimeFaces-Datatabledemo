@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>Data Table Demo</title>
+      
+        <style>
+            body{
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+            .button-container {
+            size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button-container button {
+            margin: 10px;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            background-color: #000000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        </style>
+    </h:head>
+    <h:body>
+        <h2> Operations to perform on the Sample DataTable</h2> 
+        
+        
+        <div class="button-container">
+        <h:link outcome="home">
+            <button>Basics</button>
+        </h:link>
+        </div>
+        
+        <div class="button-container">
+        <h:link outcome="crud">
+            <button>CRUD Operation</button>
+        </h:link>
+        </div>
+        
+        <div class="button-container"> 
+        <h:link outcome="context">
+            <button>Context Menu</button>
+        </h:link>
+        </div>
+        
+        <div class="button-container"> 
+        <h:link outcome="Paginatorscrolling">
+            <button>Pagination &amp; Scrolling </button>
+        </h:link>
+        </div>
+        
+        <div class="button-container"> 
+        <h:link outcome="graph">
+            <button>Graph</button>
+        </h:link>
+        </div>
+        
+         <div class="button-container"> 
+        <h:link outcome="rishabh">
+            <button>Experimenting</button>
+        </h:link>
+        </div>
+        
+    </h:body>
+</html>
